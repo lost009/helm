@@ -151,7 +151,7 @@ autoscaling:
 # Additional volumes on the output Deployment definition.
 volumes: 
   - name: nginx-cache
-    mountPath: /var/cache/nginx
+    emptyDir: {}
 
   # - name: foo
   #   secret:
