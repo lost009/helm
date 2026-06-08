@@ -152,6 +152,8 @@ autoscaling:
 volumes: 
   - name: nginx-cache
     emptyDir: {}
+  - name: nginx-run
+    emptyDir: {}
 
   # - name: foo
   #   secret:
@@ -160,8 +162,10 @@ volumes:
 
 # Additional volumeMounts on the output Deployment definition.
 volumeMounts:
-  - name: nginx-cache
-    mountPath: /var/cache/nginx
+    - name: nginx-cache
+      mountPath: /var/cache/nginx
+    - name: nginx-run
+      mountPath: /run
 
   # - name: foo
   #   mountPath: "/etc/foo"
